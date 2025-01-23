@@ -20,7 +20,7 @@ Install with
 
 `http://server.ip:9000`
 
-## Create Stack with Yml for Nginx Proxy Manager
+## Create in Portainer Stack with Yml for Nginx Proxy Manager
 
 ```bash
 version: '3'
