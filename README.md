@@ -254,7 +254,7 @@ configs:
 ```
 
 #  /home/ubuntu/hapi-fhir-config/application.yaml
-
+includes German isik profiles
 ```bash
 hapi:
   fhir:
