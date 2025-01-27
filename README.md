@@ -1,5 +1,5 @@
 
-# Clinic Data Repo
+# FHIR Clinic Data Repo
 
 My configurations on Ubuntu 22.04
 
