@@ -19,7 +19,7 @@ My configurations on Ubuntu 22.04
 
 `http://server.ip:9000`
 
-## Create in Portainer Stack with this Yml for Nginx Proxy Manager
+## Portainer Stack Yml for Nginx Proxy Manager
 
 ```bash
 version: '3'
