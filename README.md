@@ -116,7 +116,7 @@ services:
 ```
 
 
-## Yml for Keycloak
+## Yml for Keycloak + Oauth2Proxy
 
 ```bash
 version: "3.7"
