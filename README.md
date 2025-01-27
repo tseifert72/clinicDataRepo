@@ -4,7 +4,7 @@
 How to create it on Ubuntu 22.04
 
 
-## 1. Install Docker + Portainer
+## Install Docker + Portainer
 
 Install with
 
@@ -20,7 +20,7 @@ Install with
 
 `http://server.ip:9000`
 
-## 2. Create in Portainer Stack with Yml for Nginx Proxy Manager
+## Create in Portainer Stack with Yml for Nginx Proxy Manager
 
 ```bash
 version: '3'
@@ -54,38 +54,7 @@ services:
 Nginx Proxy Manager User Interface on http://server.ip:81/
 - first password Nginx Proxy Manager :: User: admin@example.com pswd: changeme
 
-## 3.  Yml for Prometheus
-
-```bash
-global:
-  scrape_interval:     15s # By default, scrape targets every 15 seconds.
-
-  # Attach these labels to any time series or alerts when communicating with
-  # external systems (federation, remote storage, Alertmanager).
-  # external_labels:
-  #  monitor: 'codelab-monitor'
-
-# A scrape configuration containing exactly one endpoint to scrape:
-# Here it's Prometheus itself.
-scrape_configs:
-  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-  - job_name: 'prometheus'
-    # Override the global default and scrape targets from this job every 5 seconds.
-    scrape_interval: 5s
-    static_configs:
-      - targets: ['localhost:9090']
-
-  # Example job for node_exporter
-  # - job_name: 'node_exporter'
-  #   static_configs:
-  #     - targets: ['node_exporter:9100']
-
-  # Example job for cadvisor
-  # - job_name: 'cadvisor'
-  #   static_configs:
-  #     - targets: ['cadvisor:8080']
-```
-## 4.  Yml for Grafana
+## Yml for Prometheus + Grafana + Cadvisor
 
 ```bash
 ---
@@ -117,20 +86,20 @@ services:
     volumes:
       - grafana-data:/var/lib/grafana
     restart: unless-stopped
-
+    
   node_exporter:
     image: quay.io/prometheus/node-exporter:latest
     container_name: node_exporter
     command:
       - '--path.rootfs=/host'
-    network_mode: host
+
     pid: host
     restart: unless-stopped
     volumes:
       - '/:/host:ro,rslave'
 
   cadvisor:
-    image: google/cadvisor/latest
+    image: gcr.io/cadvisor/cadvisor:v0.51.0
     container_name: cadvisor
     #ports:
     #  - 8080:8080
@@ -145,7 +114,9 @@ services:
     privileged: true
     restart: unless-stopped
 ```
-## 5.   Yml for Keycloak
+
+
+## Yml for Keycloak
 
 ```bash
 version: "3.7"
@@ -248,7 +219,7 @@ http {
 
 ```
 
-## 6.  Yml for Hapi FHIR
+## Yml for Hapi FHIR
 
 ```bash
 version: "3.7"
