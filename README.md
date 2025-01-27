@@ -1,12 +1,10 @@
 
 # Clinic Data Repo
 
-How to create it on Ubuntu 22.04
+My configurations on Ubuntu 22.04
 
 
-## Install Docker + Portainer
-
-Install with
+## Docker + Portainer
 
 ```bash
   apt update
