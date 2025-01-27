@@ -54,7 +54,7 @@ services:
 Nginx Proxy Manager User Interface on http://server.ip:81/
 - first password Nginx Proxy Manager :: User: admin@example.com pswd: changeme
 
-## 3.  Create in Portainer Stack with Yml for Prometheus
+## 3.  Yml for Prometheus
 
 ```bash
 global:
@@ -85,7 +85,7 @@ scrape_configs:
   #   static_configs:
   #     - targets: ['cadvisor:8080']
 ```
-## 4.  Create in Portainer Stack with Yml for Grafana
+## 4.  Yml for Grafana
 
 ```bash
 ---
@@ -145,7 +145,7 @@ services:
     privileged: true
     restart: unless-stopped
 ```
-## 5.  Create in Portainer Stack with Yml for Keycloak
+## 5.   Yml for Keycloak
 
 ```bash
 version: "3.7"
@@ -248,7 +248,7 @@ http {
 
 ```
 
-## 6.  Create in Portainer Stack with Yml for Hapi FHIR
+## 6.  Yml for Hapi FHIR
 
 ```bash
 version: "3.7"
@@ -402,7 +402,3 @@ spring:
       ddl-auto: update
 ```
 
-## 7.  Create in Portainer Stack with Yml for Grafana
-
-```bash
-```
